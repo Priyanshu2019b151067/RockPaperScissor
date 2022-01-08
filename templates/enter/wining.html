@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Moment Hai
+{% endblock %}
+{% block content %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-3"></div>
+        <div class="col-6 box">
+            <h1 class="text-center " style="color: rgb(247, 251, 255);">  {{quote}} </h1>
+            <h1 class="text-center " style="color: rgb(247, 251, 255);"> {{userscore}} : {{botscore}}</h1>
+        </div>
+        <div class="col-3"></div>
+
+        </div>
+        
+        
+    </div>
+    <div class="rela">
+        <div class="abba" id="newgame1">
+            <a href = "{% url 'home' %}"class="btn btn-danger" type="submit">New Game</a>
+        </div>
+        <div class="abba" id="endgame1">
+            <a href = "{% url 'home' %}"class="btn btn-danger" type="submit">End Game</a>
+        </div>
+    
+    </div>
+                
+    
+   <footer class="mt-5" style="font-family: 'Bigelow Rules', cursive;
+   font-size: 8rem;
+text-align: center;
+color: aliceblue;
+">Rock<i class="fas fa-hand-rock" style="font-size: 50%;"></i> Paper
+<i class="fas fa-hand-paper" style="font-size: 50%;"></i>
+scissor<i class="fas fa-hand-scissors" style="font-size: 50%;" ></i> </footer>
+{% endblock %}

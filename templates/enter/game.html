@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Let's Play
+{% endblock %}
+{% block content %}
+    <h1 style="font-family: 'Bigelow Rules', cursive;
+        font-size: 8rem;
+    text-align: center;
+    color: aliceblue;
+    ">Rock<i class="fas fa-hand-rock" style="font-size: 50%;"></i> Paper
+    <i class="fas fa-hand-paper" style="font-size: 50%;"></i>
+    scissor<i class="fas fa-hand-scissors" style="font-size: 50%;" ></i>
+</h1>
+        <!-- {{player}}
+<i class="fas fa-hand-rock"></i> -->
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <div class="playername">
+                <h2 style="font-family: 'Metamorphous', cursive;">
+                    {{player | upper}}
+                </h2>
+            </div>
+            <div class="mt-3">
+                <img src="{% static  userpicture %}"  >
+            </div>
+            <div class="mt-5 text-center">
+                <form action="" method="post"> {% csrf_token %}
+                    <button class="btn btn-danger mx-2" type="submit" name="rock" style="border-radius: 50%;"><i class="far fa-hand-rock" style="font-size: xx-large;" ></i></button>
+                    <button class="btn btn-danger mx-2" type="submit" name="paper" style="border-radius: 50%;"><i class="far fa-hand-paper" style="font-size: xx-large;" ></i></button>
+                    <button class="btn btn-danger mx-2" type="submit" name="scissor" style="border-radius: 50%;"><i class="far fa-hand-scissors" style="font-size: xx-large;" ></i></button>
+                </form>
+            </div>
+            
+        </div>
+        <div class="col-4 ">
+        
+            <div class="score pd-2">
+                <h1 class="text-center" style="color: white;">Round {{round}}</h1>
+                <h1 class="text-center " style="color: white;">{{userscore}} : {{comp}}</h1>
+                    <h2 class="text-center" style="color: white;">{{comment}}</h2>
+            </div>
+
+        </div>
+        <div class="col-4">
+            <div class="playername">
+                <h2 style="font-family: 'Metamorphous', cursive;">
+                    Bot
+                </h2>
+            </div>
+            <div class="mt-3">
+                <img src="{% static  picture %}" class="rotateimg" alt="">
+            </div>
+           
+            
+        </div>
+
+
+    </div>
+
+</div>
+
+<div class="rela">
+    <div class="abba" id="newgame">
+        <a href = "{% url 'home' %}"class="btn btn-danger" type="submit">New Game</a>
+    </div>
+    <div class="abba" id="endgame">
+        <a href = "{% url 'home' %}"class="btn btn-danger" type="submit">End Game</a>
+    </div>
+
+</div>
+
+    
+
+
+
+
+
+{% endblock %}
