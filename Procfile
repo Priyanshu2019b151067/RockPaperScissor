@@ -1,0 +1,1 @@
+web: waitress-serve --port=$PORT rock_paper_scissor.wsgi:application
