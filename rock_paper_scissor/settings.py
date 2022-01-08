@@ -3,11 +3,11 @@ import os
 from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = 'django-insecure-w4c*a-=h&)yhj$@&50_x&58v+iygx5uda*z51w^4ix$qc=*2zp'
 
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['rockpaperscissor90.herokuapp.com','localhost']
+ALLOWED_HOSTS = []
 
 
 INSTALLED_APPS = [
@@ -91,5 +91,4 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'rock_paper_scissor/static'
 ]
-STATIC_ROOT = BASE_DIR / 'static'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
