@@ -1,16 +1,13 @@
-
-import re
-from django.http.response import JsonResponse
 from django.shortcuts import redirect, render
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.decorators import api_view
 from player.serializer import PlayerSerializer
 from player.models import Player
-from rest_framework.response import Response
-import io
 from django.contrib import messages
 import random as rd
 from .utils import calculator
+import logging
+logging.basicConfig(filename='example.log', encoding='utf-8', level=logging.DEBUG)
 currentplayer = ''
 @api_view(['GET','POST'])
 def home(request):
@@ -61,6 +58,7 @@ def game_window(request):
         else:
             comments = "Draw"
 
+        logging.info(f'{currentplayer} Score  : {user} , {currentplayer} move : {data}  bot move : {dict1[key]}')
         if(i==3): 
             if(comp > user):
                 st = 'Bot Wins'
